@@ -8,12 +8,7 @@ function App() {
   const [renderUserData, setRenderUserData] = useState("")
 
 
-  function renderUsersi(dataJson){
-    const renderElements = dataJson.map(data =>{
-      return <li key={data.id}>{JSON.stringify(data)}</li>
-    })
-    setRenderUserData(renderElements)
-  }
+
 
 
 
@@ -28,7 +23,6 @@ function App() {
 
   function renderUsers(){
     const renderElements = userData.map(data =>{
-      console.log(data)
       return (
       <div key={data.id} className="list-div1">
         <div>{data.id}</div>
