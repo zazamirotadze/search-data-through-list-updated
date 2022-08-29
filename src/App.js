@@ -6,6 +6,7 @@ function App() {
   const [postData, setPostData] = useState([])
   const [commentData, setCommentData] = useState([])
   const [renderUserData, setRenderUserData] = useState("")
+  const [colorGiver, setColorGiver] = useState("")
 
 
 
@@ -34,17 +35,21 @@ function App() {
         <div>{data.website}</div>
         <div>{data.email}</div>
       </div>)
+      
     })
     setRenderUserData(renderElements)
+    setColorGiver(1)
   }
 
   function renderUsers1(){
     const renderElements = postData.map(data =>{
       return <div key={data.id} className="list-div">
-      <div>{data.id}</div>
-      <div>{data.body}</div>
-      <div>{data.title}</div></div>
+                  <div>{data.id}</div>
+                  <div>{data.body}</div>
+                  <div>{data.title}</div>
+              </div>
     })
+    setColorGiver(2)
     setRenderUserData(renderElements)
   }
 
@@ -55,6 +60,7 @@ function App() {
       <div>{data.body}</div>
       <div>{data.email}</div></div>
     })
+    setColorGiver(3)
     setRenderUserData(renderElements)
   }
 
@@ -79,9 +85,9 @@ function App() {
   return (
     <div>
       <div className="App">
-        <button onClick={renderUsers} >users</button>
-        <button onClick={renderUsers1}>posts</button>
-        <button onClick={renderUsers2}>comments</button>
+        <button onClick={renderUsers} className={colorGiver===1?"selected":null}>users</button>
+        <button onClick={renderUsers1} className={colorGiver===2?"selected":null}>posts</button>
+        <button onClick={renderUsers2} className={colorGiver===3?"selected":null}>comments</button>
       </div>
       <br/>
       <br/>

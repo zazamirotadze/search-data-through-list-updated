@@ -13,7 +13,7 @@ body{
 }
 
 
-button:focus {
+button.selected {
   background-color: black;
   color:white;
 }
@@ -36,15 +36,32 @@ button:focus {
 .list-div>div{
   border:solid 2px black;
   height: 3em;
+  display: grid;
+  align-items: center;
 }
 
 .list-div1>div{
   border:solid 2px black;
   height: 6em;
+  display: grid;
+  align-items: center;
 }
 
 .userData{
   margin-top: -3px;
 }
 
+td {
+  border:1px solid black;
+  padding: 1em;
+  text-align: center;
+  display: grid;
+  align-items: center;
+}
 
+
+tr{
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr;
+}
